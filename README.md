@@ -14,7 +14,7 @@ reload if you change any of the source files.
 Run `ng generate component <component-name>` to generate a new component. You can also use 
 `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-### Material
+### Material UI
 
 * Run `npm install @angular/material @angular/cdk @angular/animations` to install the Angular Material UI library 
 and its associated Content Development Kit
@@ -27,6 +27,22 @@ See the `index.html` file in this project for an example.
 * A theme is required to use the Material UI library.  There are several pre-built themes.
 An example of how to include one of these in an application can be found in `style.scss`
 file in this project.
+
+### Global Stylesheets
+
+SCSS provides the ability to declare variables that can be imported into other stylesheets.
+This concept can be used to define styles that are used throughout the application, keeping things DRY.
+A variation of the 7-1 (seven folders, one file) pattern is used in this project to organize reusable styles.
+The 7-1 pattern is defined in the style guide located here: https://sass-guidelin.es/#architecture.  It is 
+implemented within this project in the `src/stylesheets` directory.  The variations are:
+* The 7-1 pattern uses a directory named `sass` to house all the stylesheets.  I am opposed to 
+naming directories after a technology as the underlying technology can change.  Thus, the directory
+is named `stylesheets` within this project.
+* One of the seven folders in the pattern is `pages`.  This folder is omitted from this project 
+because it is a single-page application that uses components.  A `pages` directory clashes with 
+that paradigm, IMO.
+* The `components` directory in the 7-1 pattern is renamed to `controls` in this project
+to eliminate confusion between an UI component and an Angular components.
 
 ## Build
 
